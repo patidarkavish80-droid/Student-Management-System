@@ -16,15 +16,20 @@ class student{
         System.out.println("MARKS : "+marks);
 
     }
-    void grade(){
-        if(marks>=90){
-            System.out.println("GRADE : "+'A');
-        }else if(marks>=75){
-            System.out.println("GRADE : "+'B');
-        }else if(marks>=60){
-            System.out.println("GRADE : "+'C');
-        }else {
-            System.out.println("GRADE : "+'D');
+    void grade() {
+        if (marks >= 90) {
+            System.out.println("GRADE : " + 'A');
+        } else if (marks >= 75) {
+            System.out.println("GRADE : " + 'B');
+        } else if (marks >= 60) {
+            System.out.println("GRADE : " + 'C');
+        } else {
+            System.out.println("GRADE : " + 'D');
+        }
+        if (marks >= 40) {
+            System.out.println("Status : PASS");
+        } else {
+            System.out.println("Status : FAIL");
         }
         System.out.println();
     }
@@ -34,6 +39,7 @@ class Main {
     static Scanner sc = new Scanner(System.in);
 
     static void addStudent() {
+        System.out.println();
         System.out.print("ENTER ROLL NUMBER : ");
         int Roll_num = sc.nextInt();
         sc.nextLine();
@@ -58,6 +64,7 @@ class Main {
     }
 
     static void search_student() {
+        System.out.println();
         System.out.print("ENTER ROLL NO : ");
         int rollno = sc.nextInt();
         boolean found = false;
