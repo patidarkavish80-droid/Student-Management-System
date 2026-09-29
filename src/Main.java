@@ -209,6 +209,22 @@ class Main {
                 }
             }
     }
+    static void Loewst_marks(){
+        int min = (int) num.get(0).marks;
+        for (int i=0;i< num.size();i++) {
+            if (num.get(i).marks <= min) {
+                min = (int) num.get(i).marks;
+            }
+        }
+        for(int i=0;i< num.size();i++){
+            if(num.get(i).marks==min){
+                System.out.println("ROLL NO : "+num.get(i).rollno);
+                System.out.println("NAME : "+num.get(i).name);
+                System.out.println("MARKS : "+num.get(i).marks);
+                System.out.println();
+            }
+        }
+    }
     public static void main(String[] args) {
         while (true) {
             System.out.println("==================== STUDENT MANAGEMENT SYSTEM =====================");
@@ -221,7 +237,8 @@ class Main {
             System.out.println("7.SORT BY MARKS");
             System.out.println("8.SORT BY NAME");
             System.out.println("9.Highest Marks Student");
-            System.out.println("10.EXIT");
+            System.out.println("10.Lowest Marks Student");
+            System.out.println("11.EXIT");
             System.out.println();
             System.out.print("ENTER CHOICE : ");
             int choice = sc.nextInt();
@@ -254,9 +271,11 @@ class Main {
                     break;
                 case 9:
                     Height_Marks();
-
                     break;
                 case 10:
+                    Loewst_marks();
+                    break;
+                case 11:
                     System.out.println(" THANK YOU ");
                     System.exit(0);
                     break;
