@@ -3,15 +3,16 @@ import java.util.Scanner;
 
 class student{
     String name ;
-    int rollno;
+    int roll_no;
     double marks;
-    student(String name ,int rollno,double marks){
+    student(String name ,int roll_no,double marks){
         this.name=name;
-        this.rollno=rollno;
+        this.roll_no=roll_no;
         this.marks=marks;
-    }void Display(){
+    }
+    void Display(){
         System.out.println();
-        System.out.println("ROLL NO : "+rollno);
+        System.out.println("ROLL NO : "+roll_no);
         System.out.println("NAME : "+name);
         System.out.println("MARKS : "+marks);
 
@@ -44,8 +45,8 @@ class Main {
         int Roll_num = sc.nextInt();
         sc.nextLine();
         for(int i =0;i< num.size();i++){
-            if(num.get(i).rollno==Roll_num){
-                System.out.println("Student with this roll no already exist");
+            if(num.get(i).roll_no==Roll_num){
+                System.out.println("Student with this roll number already exist");
                 return;
             }
         }
@@ -59,7 +60,7 @@ class Main {
             num.add(s);
             System.out.println("Student added successfully");
         }else {
-            System.out.println("Invalid marks");
+            System.out.println("Invalid marks!Enter b/w 0-100 ");
         }
     }
 
@@ -79,7 +80,7 @@ class Main {
                 int rollno = sc.nextInt();
                 boolean found = false;
                 for (int i = 0; i < num.size(); i++) {
-                    if (num.get(i).rollno == rollno) {
+                    if (num.get(i).roll_no == rollno) {
                         System.out.println("Student Found");
                         System.out.println("NAME : " + num.get(i).name);
                         System.out.println("MARKS : " + num.get(i).marks);
@@ -100,7 +101,7 @@ class Main {
                 for(int i=0;i< num.size();i++){
                     if(num.get(i).name.equalsIgnoreCase(name)){
                         System.out.println("Student Found");
-                        System.out.println("Roll NO : "+num.get(i).rollno);
+                        System.out.println("Roll NO : "+num.get(i).roll_no);
                         System.out.println("Name : "+num.get(i).name);
                         num.get(i).grade();
                         find = true;
@@ -128,7 +129,7 @@ class Main {
         int Roll_num = sc.nextInt();
         boolean found = false;
         for (int i = 0; i < num.size(); i++) {
-            if (num.get(i).rollno == Roll_num) {
+            if (num.get(i).roll_no == Roll_num) {
                 num.remove(i);
                 System.out.println("Delete successfully");
                 found = true;
@@ -145,13 +146,17 @@ class Main {
         int Roll_num = sc.nextInt();
         boolean found = false;
         for (int i = 0; i < num.size(); i++) {
-            if (num.get(i).rollno == Roll_num) {
+            if (num.get(i).roll_no == Roll_num) {
                 System.out.print("ENTER NEW MARKS : ");
                 int marks = sc.nextInt();
-                num.get(i).marks = marks;
-                System.out.println("Marks Update Successfully");
-                found = true;
-                break;
+                if(marks<=0&&marks>=100) {
+                    num.get(i).marks = marks;
+                    System.out.println("Marks Update Successfully");
+                    found = true;
+                    break;
+                }else{
+                    System.out.println("Invalid marks!Enter b/w 0-100 ");
+                }
             }
         }
         if (!found) {
@@ -202,7 +207,7 @@ class Main {
         }
             for(int i=0;i< num.size();i++){
                 if(num.get(i).marks==max){
-                    System.out.println("ROLL NO : "+num.get(i).rollno);
+                    System.out.println("ROLL NO : "+num.get(i).roll_no);
                     System.out.println("NAME : "+num.get(i).name);
                     System.out.println("MARKS : "+num.get(i).marks);
                     System.out.println();
@@ -218,7 +223,7 @@ class Main {
         }
         for(int i=0;i< num.size();i++){
             if(num.get(i).marks==min){
-                System.out.println("ROLL NO : "+num.get(i).rollno);
+                System.out.println("ROLL NO : "+num.get(i).roll_no);
                 System.out.println("NAME : "+num.get(i).name);
                 System.out.println("MARKS : "+num.get(i).marks);
                 System.out.println();
