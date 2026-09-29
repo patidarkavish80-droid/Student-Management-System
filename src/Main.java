@@ -193,6 +193,22 @@ class Main {
 
 
     }
+    static void Height_Marks(){
+        int max = (int) num.get(0).marks;
+        for (int i=0;i< num.size();i++) {
+            if (num.get(i).marks >= max) {
+                max = (int) num.get(i).marks;
+            }
+        }
+            for(int i=0;i< num.size();i++){
+                if(num.get(i).marks==max){
+                    System.out.println("ROLL NO : "+num.get(i).rollno);
+                    System.out.println("NAME : "+num.get(i).name);
+                    System.out.println("MARKS : "+num.get(i).marks);
+                    System.out.println();
+                }
+            }
+    }
     public static void main(String[] args) {
         while (true) {
             System.out.println("==================== STUDENT MANAGEMENT SYSTEM =====================");
@@ -204,7 +220,8 @@ class Main {
             System.out.println("6.TOTAL STUDENTS");
             System.out.println("7.SORT BY MARKS");
             System.out.println("8.SORT BY NAME");
-            System.out.println("9.EXIT");
+            System.out.println("9.Highest Marks Student");
+            System.out.println("10.EXIT");
             System.out.println();
             System.out.print("ENTER CHOICE : ");
             int choice = sc.nextInt();
@@ -236,6 +253,10 @@ class Main {
                     Display_student();
                     break;
                 case 9:
+                    Height_Marks();
+
+                    break;
+                case 10:
                     System.out.println(" THANK YOU ");
                     System.exit(0);
                     break;
