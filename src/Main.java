@@ -225,6 +225,14 @@ class Main {
             }
         }
     }
+    static void Average (){
+        double  sum =0;
+        for(int i=0;i< num.size();i++){
+            sum = sum+num.get(i).marks ;
+        }
+        System.out.println("Average marks : "+sum/ num.size());
+
+    }
     public static void main(String[] args) {
         while (true) {
             System.out.println("==================== STUDENT MANAGEMENT SYSTEM =====================");
@@ -235,10 +243,11 @@ class Main {
             System.out.println("5.DELETE STUDENT");
             System.out.println("6.TOTAL STUDENTS");
             System.out.println("7.SORT BY MARKS");
-            System.out.println("8.SORT BY NAME");
+            System.out.println("8.SORT NAME A-Z");
             System.out.println("9.Highest Marks Student");
             System.out.println("10.Lowest Marks Student");
-            System.out.println("11.EXIT");
+            System.out.println("11.AVERAGE MARKS");
+            System.out.println("12.EXIT");
             System.out.println();
             System.out.print("ENTER CHOICE : ");
             int choice = sc.nextInt();
@@ -276,6 +285,9 @@ class Main {
                     Loewst_marks();
                     break;
                 case 11:
+                    Average();
+                    break;
+                case 12:
                     System.out.println(" THANK YOU ");
                     System.exit(0);
                     break;
