@@ -233,6 +233,22 @@ class Main {
         System.out.println("Average marks : "+sum/ num.size());
 
     }
+    static void pass_fail_count(){
+        int Pass_count = 0;
+        int Fail_count = 0;
+        for(int i =0;i< num.size();i++){
+
+        if (num.get(i).marks >= 40) {
+            Pass_count++;
+        } else {
+            Fail_count++;
+        }}
+        Total_Students();
+        System.out.println("Passed : "+Pass_count);
+            System.out.println("Failed : "+Fail_count);
+            System.out.println();
+
+    }
     public static void main(String[] args) {
         while (true) {
             System.out.println("==================== STUDENT MANAGEMENT SYSTEM =====================");
@@ -247,7 +263,8 @@ class Main {
             System.out.println("9.Highest Marks Student");
             System.out.println("10.Lowest Marks Student");
             System.out.println("11.AVERAGE MARKS");
-            System.out.println("12.EXIT");
+            System.out.println("12.PASS/FAIL REPORT");
+            System.out.println("13.EXIT");
             System.out.println();
             System.out.print("ENTER CHOICE : ");
             int choice = sc.nextInt();
@@ -288,6 +305,9 @@ class Main {
                     Average();
                     break;
                 case 12:
+                    pass_fail_count();
+                    break;
+                case 13:
                     System.out.println(" THANK YOU ");
                     System.exit(0);
                     break;
