@@ -65,23 +65,57 @@ class Main {
 
     static void search_student() {
         System.out.println();
-        System.out.print("ENTER ROLL NO : ");
-        int rollno = sc.nextInt();
-        boolean found = false;
-        for (int i = 0; i < num.size(); i++) {
-            if (num.get(i).rollno == rollno) {
-                System.out.println("NAME : " + num.get(i).name);
-                System.out.println("MARKS : " + num.get(i).marks);
-                num.get(i).grade();
-                found = true;
-                break;
-            }
-        }
-        if (!found) {
-            System.out.println("Student not found");
-        }
-    }
+        System.out.println("============== SEARCH STUDENT ==============");
+        System.out.println("1.Search by Roll Number ");
+        System.out.println("2.Search by Name ");
+        System.out.println("3.Back ");
+        System.out.println();
+        System.out.print("ENTER CHOICE : ");
+        int choice = sc.nextInt();
+        switch (choice) {
+            case 1:
 
+                System.out.print("ENTER ROLL NO : ");
+                int rollno = sc.nextInt();
+                boolean found = false;
+                for (int i = 0; i < num.size(); i++) {
+                    if (num.get(i).rollno == rollno) {
+                        System.out.println("Student Found");
+                        System.out.println("NAME : " + num.get(i).name);
+                        System.out.println("MARKS : " + num.get(i).marks);
+                        num.get(i).grade();
+                        found = true;
+                    }
+                }
+                if (!found) {
+                    System.out.println("Student Not Found");
+                }
+                break;
+            case 2:
+
+                System.out.print("ENTER NAME : ");
+                sc.nextLine();
+                String name = sc.nextLine();
+                boolean find = false;
+                for(int i=0;i< num.size();i++){
+                    if(num.get(i).name.equalsIgnoreCase(name)){
+                        System.out.println("Student Found");
+                        System.out.println("Roll NO : "+num.get(i).rollno);
+                        System.out.println("Name : "+num.get(i).name);
+                        num.get(i).grade();
+                        find = true;
+                    }
+                }
+                if(!find){
+                System.out.println("Student Not Found");
+            }
+                break;
+            case 3:
+                System.out.println();
+                break;
+        }
+
+    }
     static void Display_student() {
         for (int i = 0; i < num.size(); i++) {
             num.get(i).Display();
