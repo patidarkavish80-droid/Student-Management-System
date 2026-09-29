@@ -180,6 +180,19 @@ class Main {
                 }
             }
     }
+    static void sortbyname(){
+        for(int i=0;i< num.size();i++) {
+            for (int j = i + 1; j < num.size(); j++) {
+                if (num.get(i).name.compareToIgnoreCase(num.get(j).name) > 0) {
+                    student temp = num.get(i);
+                    num.set(i, num.get(j));
+                    num.set(j, temp);
+                }
+            }
+        }
+
+
+    }
     public static void main(String[] args) {
         while (true) {
             System.out.println("==================== STUDENT MANAGEMENT SYSTEM =====================");
@@ -190,7 +203,8 @@ class Main {
             System.out.println("5.DELETE STUDENT");
             System.out.println("6.TOTAL STUDENTS");
             System.out.println("7.SORT BY MARKS");
-            System.out.println("8.EXIT");
+            System.out.println("8.SORT BY NAME");
+            System.out.println("9.EXIT");
             System.out.println();
             System.out.print("ENTER CHOICE : ");
             int choice = sc.nextInt();
@@ -218,6 +232,10 @@ class Main {
                     Display_student();
                     break;
                 case 8:
+                    sortbyname();
+                    Display_student();
+                    break;
+                case 9:
                     System.out.println(" THANK YOU ");
                     System.exit(0);
                     break;
