@@ -157,6 +157,14 @@ class Main {
         if (!found) {
             System.out.println("Student Not Found");
         }
+
+    }
+    static void Total_Students(){
+        int total_count = 0;
+        for(int i=0;i< num.size();i++){
+            total_count++;
+        }
+        System.out.println("Total Students : "+total_count);
     }
     public static void main(String[] args) {
         while (true) {
@@ -166,7 +174,8 @@ class Main {
             System.out.println("3.SEARCH STUDENT");
             System.out.println("4.UPDATE STUDENT");
             System.out.println("5.DELETE STUDENT");
-            System.out.println("6.EXIT");
+            System.out.println("6.TOTAL STUDENTS");
+            System.out.println("7.EXIT");
             System.out.println();
             System.out.print("ENTER CHOICE : ");
             int choice = sc.nextInt();
@@ -187,6 +196,9 @@ class Main {
                     Delete_student();
                     break;
                 case 6:
+                    Total_Students();
+                    break;
+                case 7:
                     System.out.println(" THANK YOU ");
                     System.exit(0);
                     break;
