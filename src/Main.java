@@ -166,6 +166,20 @@ class Main {
         }
         System.out.println("Total Students : "+total_count);
     }
+    static void sortByMarks(){
+
+            for (int i = 0; i < num.size(); i++) {
+                for (int j = i + 1; j < num.size(); j++) {
+
+                    if (num.get(i).marks < num.get(j).marks) {
+
+                        student  temp = num.get(i);
+                        num.set(i, num.get(j));
+                        num.set(j, temp);
+                    }
+                }
+            }
+    }
     public static void main(String[] args) {
         while (true) {
             System.out.println("==================== STUDENT MANAGEMENT SYSTEM =====================");
@@ -175,7 +189,8 @@ class Main {
             System.out.println("4.UPDATE STUDENT");
             System.out.println("5.DELETE STUDENT");
             System.out.println("6.TOTAL STUDENTS");
-            System.out.println("7.EXIT");
+            System.out.println("7.SORT BY MARKS");
+            System.out.println("8.EXIT");
             System.out.println();
             System.out.print("ENTER CHOICE : ");
             int choice = sc.nextInt();
@@ -199,6 +214,10 @@ class Main {
                     Total_Students();
                     break;
                 case 7:
+                    sortByMarks();
+                    Display_student();
+                    break;
+                case 8:
                     System.out.println(" THANK YOU ");
                     System.exit(0);
                     break;
